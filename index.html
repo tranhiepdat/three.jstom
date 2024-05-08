@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,17 +11,17 @@
 <script type="importmap">
 {
     "imports": {
-        "three": "../build/three.module.js",
-        "three/addons/": "./jsm/"
+        "three": "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.164.1/three.module.min.js",
+        "three/addons/": "https://threejs.org/examples/jsm/"
     }
 }
 </script>
 <script type="module">
 import * as THREE from "three";
-import Stats from "three/addons/libs/stats.module.js";
-import {GLTFLoader} from "three/addons/loaders/GLTFLoader.js";
-import {Capsule} from "three/addons/math/Capsule.js";
-import {GUI} from "three/addons/libs/lil-gui.module.min.js";
+import Stats from "https://cdnjs.cloudflare.com/ajax/libs/stats.js/r17/Stats.min.js";
+import { GLTFLoader } from "https://threejs.org/examples/jsm/loaders/GLTFLoader.js";
+import { Capsule } from "https://threejs.org/examples/jsm/math/Capsule.js";
+import { GUI } from "https://cdn.jsdelivr.net/npm/lil-gui/dist/lil-gui.esm.min.js";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 const clock = new THREE.Clock();
@@ -61,7 +62,8 @@ const directionalLight = new THREE.DirectionalLight(0xffffff, 2.5);
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
       container.appendChild(renderer.domElement);
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////
+      ///////////////////////
+      //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const loader = new GLTFLoader().setPath('./models/gltf/');
       loader.load("world1.glb", (gltf) => {
@@ -85,7 +87,7 @@ const loader = new GLTFLoader().setPath('./models/gltf/');
       });
 
 let mixer,idleAction, walkAction, character,playerCollider; // For character animations
-loader.load('character2.glb', function (gltf) {
+loader.load('Peasant1.glb', function (gltf) {
     character = gltf.scene;
         /////
         gltf.scene.traverse((child) => {
